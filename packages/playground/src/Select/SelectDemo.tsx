@@ -18,7 +18,7 @@
  SOFTWARE.
  */
 
-import React, { MouseEvent, useState } from 'react'
+import React, { MouseEvent } from 'react'
 import {
   Button,
   Divider,
@@ -27,6 +27,7 @@ import {
   FieldSelect,
   ModalContent,
   Dialog,
+  InputText,
 } from '@looker/components'
 
 const options = [
@@ -78,6 +79,12 @@ function SelectContent() {
         <Button mt="medium" data-fruit="3" onClick={handleClick}>
           Oranges
         </Button>
+        <Divider my="xlarge" />
+        <InputText disabled />
+        <Divider my="xlarge" />
+        <InputText />
+        <Divider my="xlarge" />
+        <InputText validationType="error" />
       </Box>
       <Divider my="xlarge" />
       <FieldSelect
@@ -120,7 +127,7 @@ const ModalInner = () => {
 }
 
 export const SelectDemo = () => {
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = React.useState(false)
   const handleClick = () => setOpen(true)
   const handleClose = () => setOpen(false)
   return (
