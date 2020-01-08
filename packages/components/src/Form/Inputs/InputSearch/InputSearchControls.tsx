@@ -63,7 +63,13 @@ export const InputSearchControls: FC<InputSearchControlsProps> = ({
   )
 
   return (
-    <Box mx="xxsmall" height="100%" display="flex" alignItems="center">
+    <Box
+      mx="xxsmall"
+      height="100%"
+      display="flex"
+      alignItems="center"
+      ml="auto"
+    >
       {summary && (
         <Text
           pr="xsmall"
