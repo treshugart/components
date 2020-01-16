@@ -49,3 +49,29 @@ DialogManager gives an easy way to compose a Dialog without the need to manage s
   {onClick => <Button onClick={onClick}>Open Dialog </Button>}
 </DialogManager>
 ```
+
+## Width and MaxWidth Props
+
+All variants of Dialog allow you to override content `width` and `max-width` style to suit your content. We support responsive width arrays an well as static strings.
+
+Responsive array values are passed from smallest to largest breakpoints:
+
+```jsx
+<DialogManager
+  content={
+    <ModalContent>
+      <Heading>
+        Resize your browser to watch maxWidth adjust accordingly
+      </Heading>
+      <Paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et eros
+        sed nisi pellentesque vulputate ac eu augue. Sed commodo sagittis neque,
+        vel vulputate massa.
+      </Paragraph>
+    </ModalContent>
+  }
+  maxWidth={['90vw', '60vw', '500px', '800px']}
+>
+  {open => <Button onClick={open}>Open responsive width modal</Button>}
+</DialogManager>
+```
