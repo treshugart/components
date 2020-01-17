@@ -113,11 +113,14 @@ export const inputTextValidation = css<InputTextProps>`
   ${props =>
     props.validationType === 'error'
       ? `
-      border-color: ${props.theme.colors.palette.red500};
-      &:hover,
+      border-color: ${props.theme.colors.palette.red400};
+      &:hover {
+        border-color: ${props.theme.colors.palette.red500};
+      }
       &:focus,
       :focus-within {
         border-color: ${props.theme.colors.palette.red500};
+        box-shadow: 0 0 0 2px ${props.theme.colors.palette.red100};
       }
       `
       : ''}
@@ -155,11 +158,9 @@ export const InputText = styled(InputComponent).attrs(
 `
 
 export const inputTextDefaults = {
+  ...CustomizableInputTextAttributes,
   border: 'solid 1px',
   borderColor: 'palette.charcoal200',
-  borderRadius: CustomizableInputTextAttributes.borderRadius,
-  fontSize: CustomizableInputTextAttributes.fontSize,
-  height: CustomizableInputTextAttributes.height,
 }
 
 InputText.defaultProps = {
